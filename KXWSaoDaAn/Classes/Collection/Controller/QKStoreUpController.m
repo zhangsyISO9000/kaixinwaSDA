@@ -9,6 +9,7 @@
 #import "QKStoreUpController.h"
 #import "LCCSqliteManager.h"
 #import "QKStoreCell.h"
+#import "QKAnswerViewController.h"
 
 @interface QKStoreUpController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NSMutableArray * allDataArray;
@@ -55,6 +56,8 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview: tableView];
+    self.tableView = tableView;
+    
     
 }
 
@@ -81,5 +84,15 @@
 #pragma mark - UITableViewDelegate
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QKAnswerViewController * avc = [[QKAnswerViewController alloc]init];
+    QKCollectionModel * cm = (QKCollectionModel *)self.allDataArray[indexPath.row];
+    
+    
+    avc.unique_code = cm.unique_code;
+    [self.navigationController pushViewController:avc animated:YES];
+    
 }
 @end
