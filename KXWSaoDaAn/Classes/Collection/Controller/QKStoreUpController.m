@@ -8,10 +8,11 @@
 
 #import "QKStoreUpController.h"
 #import "LCCSqliteManager.h"
+#import "QKStoreCell.h"
 
-@interface QKStoreUpController ()
+@interface QKStoreUpController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NSMutableArray * allDataArray;
-
+@property(nonatomic,weak)UITableView * tableView;
 @end
 
 @implementation QKStoreUpController
@@ -27,8 +28,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"我的收藏";
+    [self creatUI];
+    
+    //数据库操作
     LCCSqliteManager * manager= [LCCSqliteManager shareInstance];
-    self.allDataArray = [[manager getSheetDataWithSheet:@"answerAndPage"] mutableCopy];
+    NSArray * dataArray = [manager getSheetDataWithSheet:@"answerAndPage"];
+    for (NSArray * datas in dataArray) {
+        QKCollectionModel * cm = [[QKCollectionModel alloc]init];
+        cm.unique_code = datas[0];
+        cm.timeStp = datas[1];
+        cm.title = datas[2];
+        
+        [self.allDataArray addObject:cm];
+    }
+    
+    
+    
+    
+}
+-(void)creatUI
+{
+    UITableView * tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tableView.tableFooterView = [[UIView alloc]init];
+    
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview: tableView];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -37,7 +64,22 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.allDataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QKStoreCell * cell = [QKStoreCell cellWithTableView:tableView];
+    cell.collectModel = self.allDataArray[indexPath.row];
+    
+    return cell;
+}
+
 #pragma mark - UITableViewDelegate
-
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D911E2FD1C644D5F0027FE82 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D911E2FC1C644D5F0027FE82 /* libsqlite3.tbd */; };
 		D94F3E7F1C7AB4770094F406 /* QKStoreUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94F3E7E1C7AB4770094F406 /* QKStoreUpController.m */; };
+		D94F3E831C7ACC790094F406 /* QKStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D94F3E811C7ACC790094F406 /* QKStoreCell.m */; };
 		D96AA4E01C632C96005343E0 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D96AA4DF1C632C96005343E0 /* UIBarButtonItem+Extension.m */; };
 		D96AA4E31C633472005343E0 /* QKCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D96AA4E21C633472005343E0 /* QKCollectionModel.m */; };
 		D997EA181C60784B004DC6BF /* QKAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D997E9D81C60784B004DC6BF /* QKAnswerViewController.m */; };
@@ -66,6 +67,8 @@
 		D911E2FC1C644D5F0027FE82 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D94F3E7D1C7AB4770094F406 /* QKStoreUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKStoreUpController.h; sourceTree = "<group>"; };
 		D94F3E7E1C7AB4770094F406 /* QKStoreUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKStoreUpController.m; sourceTree = "<group>"; };
+		D94F3E801C7ACC790094F406 /* QKStoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QKStoreCell.h; sourceTree = "<group>"; };
+		D94F3E811C7ACC790094F406 /* QKStoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QKStoreCell.m; sourceTree = "<group>"; };
 		D96AA4DE1C632C96005343E0 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		D96AA4DF1C632C96005343E0 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		D96AA4E11C633472005343E0 /* QKCollectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QKCollectionModel.h; path = ../../Answer/Model/QKCollectionModel.h; sourceTree = "<group>"; };
@@ -513,6 +516,8 @@
 		D9E245171C65A48D007E1C01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D94F3E801C7ACC790094F406 /* QKStoreCell.h */,
+				D94F3E811C7ACC790094F406 /* QKStoreCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -648,6 +653,7 @@
 				D997EA3B1C607B4C004DC6BF /* Reachability.m in Sources */,
 				D9E245091C657F15007E1C01 /* NSDate+MJ.m in Sources */,
 				D997EA1B1C60784B004DC6BF /* AFHTTPRequestOperation.m in Sources */,
+				D94F3E831C7ACC790094F406 /* QKStoreCell.m in Sources */,
 				D997EA261C60784B004DC6BF /* MBProgressHUD.m in Sources */,
 				D997EA1A1C60784B004DC6BF /* UIView+Extension.m in Sources */,
 				D997EA211C60784B004DC6BF /* AFURLRequestSerialization.m in Sources */,
