@@ -1,0 +1,46 @@
+//
+//  SaoDaAn.pch
+//  KXWSaoDaAn
+//
+//  Created by 张思源 on 16/2/1.
+//  Copyright © 2016年 乾坤翰林. All rights reserved.
+//
+
+#ifndef SaoDaAn_pch
+#define SaoDaAn_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+// 颜色
+#define QKColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+// 全局背景色
+#define QKGlobalBg QKColor(234, 234, 234)
+//屏幕宽度
+#define QKScreenWidth [UIScreen mainScreen].bounds.size.width
+
+//判断手机型号
+#define ISLessThanFourInch ([UIScreen mainScreen].bounds.size.height <= 568.0)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+#ifdef DEBUG
+#define DCLog(...) NSLog(__VA_ARGS__)
+#else
+#define DCLog(...)
+#endif
+
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "NSDate+MJ.h"
+
+
+
+#endif /* SaoDaAn_pch */

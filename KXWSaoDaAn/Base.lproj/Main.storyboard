@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HLt-Br-o0d">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="QKHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04K-25-wZD">
+                                <rect key="frame" x="150" y="275" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Sbc-A1-h4U"/>
+                                    <constraint firstAttribute="height" constant="50" id="oQO-0N-Mfn"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" backgroundImage="saomiaoerweima">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yEM-KV-fGl"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3ML-fy-NuQ">
+                                <rect key="frame" x="230" y="74" width="140" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="5AB-mD-hkK"/>
+                                    <constraint firstAttribute="width" constant="140" id="wzF-cO-JJR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO6-1O-BRn">
+                                <rect key="frame" x="210" y="440" width="180" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vPZ-Ah-4Vb"/>
+                                    <constraint firstAttribute="width" constant="180" id="wGG-8k-NSq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                                <state key="normal" title="我的收藏" backgroundImage="finish-2"/>
+                                <state key="highlighted" backgroundImage="finish"/>
+                                <connections>
+                                    <action selector="toMyCollection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nJa-CY-Rln"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="04K-25-wZD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="57t-9F-7Ft"/>
+                            <constraint firstItem="gO6-1O-BRn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GEd-mv-NPS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gO6-1O-BRn" secondAttribute="bottom" constant="100" id="LZ4-gj-peP"/>
+                            <constraint firstItem="3ML-fy-NuQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="PlO-cM-ifd"/>
+                            <constraint firstItem="04K-25-wZD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nHf-ad-t0g"/>
+                            <constraint firstItem="3ML-fy-NuQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ojD-Wk-DWV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kU5-vp-bAl"/>
+                    <connections>
+                        <segue destination="hMC-jd-rUD" kind="show" identifier="toScan" id="Zhg-D1-n6Q"/>
+                        <segue destination="pq5-3K-A94" kind="show" identifier="toWeb" id="UK6-df-2UB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963" y="-47"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rxk-tD-CSX">
+            <objects>
+                <viewController id="pq5-3K-A94" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cz7-7W-e3y"/>
+                        <viewControllerLayoutGuide type="bottom" id="8kj-Hl-pxI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kGI-2f-J82">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDl-by-2cm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="734"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="qM5-n2-Nm7">
+            <objects>
+                <viewController id="hMC-jd-rUD" customClass="QKQRCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q0v-0y-J0P"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzc-ZD-LJU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wQy-5J-ZIO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQ4-uR-JEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="-40"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vQa-X1-ckb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HLt-Br-o0d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eal-de-S6W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="byB-aN-NAN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0CU-i8-6NP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186" y="111"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="finish" width="339" height="45"/>
+        <image name="finish-2" width="339" height="46"/>
+        <image name="logo" width="141" height="52"/>
+        <image name="saomiaoerweima" width="296" height="51"/>
+    </resources>
+</document>
